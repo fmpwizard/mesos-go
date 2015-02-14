@@ -12,7 +12,6 @@ before_script:
   - DestDir="dirname $SrcDir/mesos"
   - mv $SrcDir $DestDir
   - cd ../../mesos/$RepoName
-install:
-  - go get github.com/mesos/mesos-go
+
 script: 
   - go build ./...
