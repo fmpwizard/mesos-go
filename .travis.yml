@@ -15,3 +15,7 @@ before_script:
 script: 
   - godep restore
   - go build ./...
+  - make vet
+  - make format
+  - make test
+  
