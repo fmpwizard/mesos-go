@@ -7,7 +7,11 @@ before_script:
   - sudo apt-get update -qq
   - sudo apt-get install -y protobuf-compiler
   - sudo apt-get install -y libprotobuf-dev
-install:
-  - go get github.com/mesos/mesos-go
+  - RepoName=basename $PWD
+  - SrcDir=dirname $PWD
+  - DestDir="dirname $SrcDir/mesos"
+  - mv $SrcDir $DestDir
+  - cd ../../mesos/$RepoName
+
 script: 
   - go build ./...
